@@ -2,12 +2,12 @@
   "name": "ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-alu0101515458",
   "version": "1.0.0",
   "description": "",
-  "main": "prueba.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "tsc-watch --onSuccess \"node dist/basicFunctions.js\"",
+    "dev": "tsc-watch --onSuccess \"node dist/EJERCICIO-PE101/index.js\"",
     "doc": "typedoc",
-    "test": "mocha",
+    "test": "c8 mocha",
     "coverage": "c8 npm test && c8 report --reporter=lcov"
   },
   "keywords": [],
@@ -18,6 +18,7 @@
     "@types/inquirer": "^9.0.7",
     "@types/lowdb": "^1.0.15",
     "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.30",
     "@types/yargs": "^17.0.32",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
