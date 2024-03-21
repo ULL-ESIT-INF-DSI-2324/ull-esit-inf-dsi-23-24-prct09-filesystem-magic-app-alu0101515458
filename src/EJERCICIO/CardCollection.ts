@@ -163,7 +163,7 @@ export class CardCollection {
         console.log(`Marcas de Lealtad: ${card.marcasLealtad}`);
       }
       console.log(`Valor de Mercado: ${card.valorMercado}`);
-      console.log("|"); // Salto de línea para separar las cartas
+      console.log(""); // Salto de línea para separar las cartas
     });
   }
 
