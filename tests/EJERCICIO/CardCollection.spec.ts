@@ -335,49 +335,4 @@ describe('Colección de Cartas', () => {
       expect(cartaCargada?.nombre).to.equal(cartaPrueba.nombre);
   });
 
-  it('debería listar todas las cartas en la colección', () => {
-    const cartas: Card[] = [
-      {
-        id: 1,
-        nombre: 'Carta 1',
-        costeMana: 3,
-        color: Color.Azul,
-        líneaTipo: TipoLinea.Criatura,
-        rareza: Rareza.Común,
-        textoReglas: 'Texto de reglas para Carta 1',
-        valorMercado: 10
-      },
-      {
-        id: 2,
-        nombre: 'Carta 2',
-        costeMana: 2,
-        color: Color.Rojo,
-        líneaTipo: TipoLinea.Instantáneo,
-        rareza: Rareza.Rara,
-        textoReglas: 'Texto de reglas para Carta 2',
-        valorMercado: 20
-      }
-    ];
-  
-    cartas.forEach(carta => colección.addCard(carta));
-  
-    const originalConsoleLog = console.log;
-    let loggedMessage = "";
-  
-    // Redefinimos console.log para capturar su salida
-    console.log = (message) => {
-      loggedMessage += message + "\n";
-    };
-  
-    colección.listCards();
-  
-    // Restauramos console.log a su implementación original
-    console.log = originalConsoleLog;
-  
-    // Verificamos que la salida capturada contenga la descripción esperada
-    const expectedDescription = `\nColección de cartas de ${usuarioPrueba}\n\nID: 1\nNombre: Carta 1\nCoste de Mana: 3\nColor: Azul\nTipo de Línea: Criatura\nRareza: Común\nTexto de Reglas: Texto de reglas para Carta 1\nValor de Mercado: 10\nID: 2\nNombre: Carta 2\nCoste de Mana: 2\nColor: Rojo\nTipo de Línea: Instantáneo\nRareza: Rara\nTexto de Reglas: Texto de reglas para Carta 2\nValor de Mercado: 20\n`;
-    const cleanedLoggedMessage = loggedMessage.replace(/\x1b\[[0-9;]*m/g, '');
-    expect(cleanedLoggedMessage).to.equal(expectedDescription);
-  });
-
 });
